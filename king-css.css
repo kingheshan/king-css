@@ -1,0 +1,1104 @@
+/*去掉默认块元素的内外边距*/
+
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*去掉默认列表的样式*/
+
+ul, ol, li {
+    list-style: none;
+}
+
+
+/*按钮、链接获得焦点，包括链接悬浮轮廓取消--input:focus是否添加*/
+
+.king-button:focus, a:active, a:hover {
+    outline: 0;
+}
+
+
+/*表格边框设置成合并的*/
+
+.king-table, table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+
+/*html字体可以保证所有设备兼容，根据不同设置使用不同设备自带字体*/
+
+html {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+/*去掉body的外边距*/
+
+body {
+    margin: 0;
+}
+
+
+/*将h5新增元素设置成块元素*/
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+
+/*音频、视频、canvas、进度条设置成行内块元素，目的是可以设置宽和高，并且设置垂直对齐为baseline对齐*/
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+
+/*音频如果不带有控制属性的将其隐藏*/
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+
+/*确保H5新增属性hidden，将控件隐藏。包括H5新增元素template，默认也是隐藏*/
+
+[hidden], template {
+    display: none;
+}
+
+
+/*去掉默认链接下划线，将超链接的背景色设置成transparent,transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值*/
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+/*设置缩略语有1px 虚线下边框*/
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+
+/*设置b、strong加粗*/
+
+b, strong {
+    font-weight: 700;
+}
+
+
+/*dfn(defination),术语在网页中的字体样式是倾斜的*/
+
+dfn {
+    font-style: italic;
+}
+
+
+/*设置h1的字体和外边距*/
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+
+
+/*保证所有浏览器的mark样式一致*/
+
+mark {
+    color: #000;
+    background: #ff0;
+}
+
+
+/*设置small元素的字体大小为80%*/
+
+small {
+    font-size: 80%;
+}
+
+
+/*设置上标和下标在所有浏览器样式一致*/
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+
+/*图片和legend边框为0*/
+
+img, legend, iframe {
+    border: 0;
+}
+
+
+/*设置svg元素除了根元素以为超出部分隐藏*/
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+/*设置figure元素的外边距，保证在所有浏览器一致*/
+
+figure {
+    margin: 1em 40px;
+}
+
+
+/*设置hr的为标准盒模型，保证所有浏览器一致*/
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+
+
+/*设置pre、textarea超出部分自动*/
+
+pre, textarea {
+    overflow: auto;
+}
+
+
+/*设置code, kbd, pre, samp浏览器保持一致*/
+
+code, kbd, pre, samp {
+    font-family: monospace;
+    font-size: 1em;
+}
+
+
+/*设置button, input, optgroup, select, textarea的color和font都是继承值，外边距为0*/
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+    margin: 0;
+    color: inherit;
+}
+
+
+/*设置按钮样式为button，鼠标样式为pointer，保证所有浏览器一致*/
+
+button, input[type=button], input[type=reset], input[type=submit] {
+    cursor: pointer;
+    /*appearance目前需要添加浏览器前缀chrome和safari加-webkit- 火狐添加-moz-*/
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+
+/*设置禁用按钮和input的鼠标为default样式*/
+
+button[disabled], input[disabled] {
+    cursor: default;
+}
+
+
+/*设置firefox浏览器按钮和input获得焦点时内部的边框和padding为0*/
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+
+/*设置单选框和复选框盒模型为border-box，padding为0*/
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+/*设置king-button组件、input控件除了带type属性的、包括king-menu组件盒模型为border-box*/
+
+.king-button, .king-form input:not([type]), .king-menu {
+    box-sizing: border-box;
+}
+
+
+/*重置fieldset的样式*/
+
+fieldset {
+    margin: 0 2px;
+    padding: .35em .625em .75em;
+    border: 1px solid silver;
+}
+
+.hidden, [hidden] {
+    display: none!important;
+}
+
+.king-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*布局元素包含框*/
+
+.king-g {
+    font-family: FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif;
+    display: flex;
+    /*告诉浏览器加载文本的时候如何渲染，设置optimizespeed是速度优先，清晰靠后*/
+    text-rendering: optimizespeed;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+.king-u, .king-u-1, .king-u-1-1, .king-u-1-12, .king-u-1-2, .king-u-1-24, .king-u-1-3, .king-u-1-4, .king-u-1-5, .king-u-1-6, .king-u-1-8, .king-u-10-24, .king-u-11-12, .king-u-11-24, .king-u-12-24, .king-u-13-24, .king-u-14-24, .king-u-15-24, .king-u-16-24, .king-u-17-24, .king-u-18-24, .king-u-19-24, .king-u-2-24, .king-u-2-3, .king-u-2-5, .king-u-20-24, .king-u-21-24, .king-u-22-24, .king-u-23-24, .king-u-24-24, .king-u-3-24, .king-u-3-4, .king-u-3-5, .king-u-3-8, .king-u-4-24, .king-u-4-5, .king-u-5-12, .king-u-5-24, .king-u-5-5, .king-u-5-6, .king-u-5-8, .king-u-6-24, .king-u-7-12, .king-u-7-24, .king-u-7-8, .king-u-8-24, .king-u-9-24 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.king-g [class*=king-u] {
+    font-family: sans-serif;
+}
+
+
+/*设置flex-item的布局百分比，12列和24列的布局-start*/
+
+.king-u-1-24 {
+    width: 4.1667%;
+}
+
+.king-u-1-12, .king-u-2-24 {
+    width: 8.3333%;
+}
+
+.king-u-1-8, .king-u-3-24 {
+    width: 12.5%;
+}
+
+.king-u-1-6, .king-u-4-24 {
+    width: 16.6667%;
+}
+
+.king-u-1-5 {
+    width: 20%;
+}
+
+.king-u-5-24 {
+    width: 20.8333%;
+}
+
+.king-u-1-4, .king-u-6-24 {
+    width: 25%;
+}
+
+.king-u-7-24 {
+    width: 29.1667%;
+}
+
+.king-u-1-3, .king-u-8-24 {
+    width: 33.3333%;
+}
+
+.king-u-3-8, .king-u-9-24 {
+    width: 37.5%;
+}
+
+.king-u-2-5 {
+    width: 40%;
+}
+
+.king-u-10-24, .king-u-5-12 {
+    width: 41.6667%;
+}
+
+.king-u-11-24 {
+    width: 45.8333%;
+}
+
+.king-u-1-2, .king-u-12-24 {
+    width: 50%;
+}
+
+.king-u-13-24 {
+    width: 54.1667%;
+}
+
+.king-u-14-24, .king-u-7-12 {
+    width: 58.3333%;
+}
+
+.king-u-3-5 {
+    width: 60%;
+}
+
+.king-u-15-24, .king-u-5-8 {
+    width: 62.5%;
+}
+
+.king-u-16-24, .king-u-2-3 {
+    width: 66.6667%;
+}
+
+.king-u-17-24 {
+    width: 70.8333%;
+}
+
+.king-u-18-24, .king-u-3-4 {
+    width: 75%;
+}
+
+.king-u-19-24 {
+    width: 79.1667%;
+}
+
+.king-u-4-5 {
+    width: 80%;
+}
+
+.king-u-20-24, .king-u-5-6 {
+    width: 83.3333%;
+}
+
+.king-u-21-24, .king-u-7-8 {
+    width: 87.5%;
+}
+
+.king-u-11-12, .king-u-22-24 {
+    width: 91.6667%;
+}
+
+.king-u-23-24 {
+    width: 95.8333%;
+}
+
+.king-u-1, .king-u-1-1, .king-u-24-24, .king-u-5-5 {
+    width: 100%;
+}
+
+
+/*设置flex-item的布局百分比-end*/
+
+
+/*按钮通用样式*/
+
+.king-button {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+/*按钮表现样式*/
+
+.king-button {
+    font-family: inherit;
+    font-size: 100%;
+    padding: .5em 1em;
+    text-decoration: none;
+    color: #444;
+    color: rgba(0, 0, 0, .8);
+    border: 1px solid #999;
+    border: transparent;
+    border-radius: 2px;
+    background-color: #e6e6e6;
+}
+
+
+/*按钮悬浮、获得焦点时的样式*/
+
+.king-button-hover, .king-button:focus, .king-button:hover {
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1));
+}
+
+
+/*设置按钮激活时的样式*/
+
+.king-button-active, .king-button:active {
+    border-color: #000;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset;
+}
+
+
+/*设置按钮禁用时的样式*/
+
+.king-button-disabled, .king-button-disabled:active, .king-button-disabled:focus, .king-button-disabled:hover, .king-button[disabled] {
+    pointer-events: none;
+    opacity: .4;
+    border: none;
+    background-image: none;
+    box-shadow: none;
+}
+
+
+/*设置按钮隐藏*/
+
+.king-button-hidden {
+    display: none;
+}
+
+
+/*设置主色按钮button和a*/
+
+.king-button-primary, .king-button-selected, a.king-button-primary, a.king-button-selected {
+    color: #fff;
+    background-color: #0078e7;
+}
+
+
+/*success、error、warning、secondary按钮*/
+
+.button-success, .button-error, .button-warning, .button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65);
+}
+
+.button-error {
+    background: rgb(202, 60, 60);
+}
+
+.button-warning {
+    background: rgb(223, 117, 20);
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221);
+}
+
+
+/*设置不同大小的按钮xs、s、l、xl*/
+
+.button-xs {
+    font-size: 70%;
+}
+
+.button-s {
+    font-size: 85%;
+}
+
+.button-l {
+    font-size: 110%;
+}
+
+.button-xl {
+    font-size: 125%;
+}
+
+
+/*按钮组样式*/
+
+.king-button-group .king-button {
+    margin: 0;
+    vertical-align: top;
+    border-right: 1px solid #111;
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 0;
+}
+
+
+/*设置按钮组的第一个按钮左上和左下的圆角*/
+
+.king-button-group .king-button:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+
+/*设置按钮组最后一个按钮的右上和右下的圆角*/
+
+.king-button-group .king-button:last-child {
+    border-right: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+
+/*设置表单控件基础样式*/
+
+.king-form input[type=password], .king-form input[type=email], .king-form input[type=url], .king-form input[type=date], .king-form input[type=month], .king-form input[type=time], .king-form input[type=datetime], .king-form input[type=datetime-local], .king-form input[type=week], .king-form input[type=tel], .king-form input[type=color], .king-form input[type=number], .king-form input[type=search], .king-form input[type=text], .king-form select, .king-form textarea {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: .5em .6em;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px #ddd;
+}
+
+
+/*设置不带有type属性的控件的样式*/
+
+.king-form input:not([type]) {
+    display: inline-block;
+    padding: .5em .6em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px #ddd;
+}
+
+
+/*设置color控件的样式*/
+
+.king-form input[type=color] {
+    padding: .2em .5em;
+}
+
+
+/*设置表单控件获得焦点时的样式*/
+
+.king-form input:not([type]):focus, .king-form input[type=password]:focus, .king-form input[type=email]:focus, .king-form input[type=url]:focus, .king-form input[type=date]:focus, .king-form input[type=month]:focus, .king-form input[type=time]:focus, .king-form input[type=datetime]:focus, .king-form input[type=datetime-local]:focus, .king-form input[type=week]:focus, .king-form input[type=tel]:focus, .king-form input[type=color]:focus, .king-form input[type=number]:focus, .king-form input[type=search]:focus, .king-form input[type=text]:focus, .king-form select:focus, .king-form textarea:focus {
+    border-color: #129fea;
+    outline: 0;
+}
+
+
+/*设置元素获得焦点时轮廓的样式*/
+
+.king-form input[type=file]:focus, .king-form input[type=checkbox]:focus, .king-form input[type=radio]:focus {
+    outline: #129fea auto 1px;
+}
+
+
+/*复选框、单选框变成块元素*/
+
+.king-form .king-checkbox, .king-form .king-radio {
+    display: block;
+    margin: .5em 0;
+}
+
+
+/*设置控件禁用时的样式*/
+
+.king-form input:not([type])[disabled], .king-form input[type=password][disabled], .king-form input[type=email][disabled], .king-form input[type=url][disabled], .king-form input[type=date][disabled], .king-form input[type=month][disabled], .king-form input[type=time][disabled], .king-form input[type=datetime][disabled], .king-form input[type=datetime-local][disabled], .king-form input[type=week][disabled], .king-form input[type=tel][disabled], .king-form input[type=color][disabled], .king-form input[type=number][disabled], .king-form input[type=search][disabled], .king-form input[type=text][disabled], .king-form select[disabled], .king-form textarea[disabled] {
+    cursor: not-allowed;
+    color: #cad2d3;
+    background-color: #eaeded;
+}
+
+
+/*设置只读时的样式*/
+
+.king-form input[readonly], .king-form select[readonly], .king-form textarea[readonly] {
+    color: #777;
+    border-color: #ccc;
+    background-color: #eee;
+}
+
+
+/*设置输入内容不符合规范时的样式*/
+
+.king-form input:focus:invalid, .king-form select:focus:invalid, .king-form textarea:focus:invalid {
+    color: #b94a48;
+    border-color: #e9322d;
+}
+
+
+/*设置下拉列表的样式*/
+
+.king-form select {
+    height: 2.25em;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.king-form select[multiple] {
+    height: auto;
+}
+
+.king-form label {
+    margin: .5em 0 .2em;
+}
+
+.king-form fieldset {
+    margin: 0;
+    padding: .35em 0 .75em;
+    border: 0;
+}
+
+.king-form legend {
+    display: block;
+    width: 100%;
+    margin-bottom: .3em;
+    padding: .3em 0;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+/*设置表单以堆叠形式排布，里面的控件变成块元素*/
+
+.king-form-stacked input:not([type]), .king-form-stacked input[type=password], .king-form-stacked input[type=email], .king-form-stacked input[type=url], .king-form-stacked input[type=date], .king-form-stacked input[type=month], .king-form-stacked input[type=time], .king-form-stacked input[type=datetime], .king-form-stacked input[type=datetime-local], .king-form-stacked input[type=week], .king-form-stacked input[type=tel], .king-form-stacked input[type=color], .king-form-stacked input[type=file], .king-form-stacked input[type=number], .king-form-stacked input[type=search], .king-form-stacked input[type=text], .king-form-stacked label, .king-form-stacked select, .king-form-stacked textarea {
+    display: block;
+    margin: .25em 0;
+}
+
+.king-form-aligned .king-help-inline, .king-form-aligned input, .king-form-aligned select, .king-form-aligned textarea, .king-form-message-inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.king-form-aligned textarea {
+    vertical-align: top;
+}
+
+.king-form-aligned .king-control-group {
+    margin-bottom: .5em;
+}
+
+.king-form-aligned .king-control-group label {
+    display: inline-block;
+    width: 10em;
+    margin: 0 1em 0 0;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.king-form-aligned .king-controls {
+    margin: 1.5em 0 0 11em;
+}
+
+
+/*设置圆角的input*/
+
+.king-form .king-input-rounded, .king-form input.king-input-rounded {
+    padding: .5em 1em;
+    border-radius: 2em;
+}
+
+.king-form .king-group fieldset {
+    margin-bottom: 10px;
+}
+
+
+/*设置input组的通用样式*/
+
+.king-form .king-group input, .king-form .king-group textarea {
+    position: relative;
+    top: -1px;
+    display: block;
+    margin: 0 0 -1px;
+    padding: 10px;
+    border-radius: 0;
+}
+
+
+/*设置input组中的控件获得焦点时的z-index*/
+
+.king-form .king-group input:focus, .king-form .king-group textarea:focus {
+    z-index: 3;
+}
+
+
+/*设置input组的第一个元素的圆角和位置*/
+
+.king-form .king-group input:first-child, .king-form .king-group textarea:first-child {
+    top: 1px;
+    margin: 0;
+    border-radius: 4px 4px 0 0;
+}
+
+
+/*如果input组中只有一个控件，则都显示圆角*/
+
+.king-form .king-group input:first-child:last-child, .king-form .king-group textarea:first-child:last-child {
+    top: 1px;
+    margin: 0;
+    border-radius: 4px;
+}
+
+
+/*设置input组中最后一个控件的圆角*/
+
+.king-form .king-group input:last-child, .king-form .king-group textarea:last-child {
+    top: -2px;
+    margin: 0;
+    border-radius: 0 0 4px 4px;
+}
+
+
+/*设置input组中的按钮控件*/
+
+.king-form .king-group button {
+    margin: .35em 0;
+}
+
+
+/*设置input控件的宽度start*/
+
+.king-form .king-input-1 {
+    width: 100%;
+}
+
+.king-form .king-input-3-4 {
+    width: 75%;
+}
+
+.king-form .king-input-2-3 {
+    width: 66%;
+}
+
+.king-form .king-input-1-2 {
+    width: 50%;
+}
+
+.king-form .king-input-1-3 {
+    width: 33%;
+}
+
+.king-form .king-input-1-4 {
+    width: 25%;
+}
+
+
+/*设置input控件的宽度end*/
+
+
+/*设置表单行内提示信息样式*/
+
+.king-form .king-help-inline, .king-form-message-inline {
+    font-size: .875em;
+    display: inline-block;
+    padding-left: .3em;
+    vertical-align: middle;
+    color: #666;
+}
+
+
+/*单独的块级提示信息*/
+
+.king-form-message {
+    font-size: .875em;
+    display: block;
+    color: #666;
+}
+
+
+/*媒体查询-移动端设备重置*/
+
+@media only screen and (max-width :480px) {
+    .king-form button[type=submit] {
+        margin: .7em 0 0;
+    }
+    .king-form input:not([type]), .king-form input[type=password], .king-form input[type=email], .king-form input[type=url], .king-form input[type=date], .king-form input[type=month], .king-form input[type=time], .king-form input[type=datetime], .king-form input[type=datetime-local], .king-form input[type=week], .king-form input[type=tel], .king-form input[type=color], .king-form input[type=number], .king-form input[type=search], .king-form input[type=text], .king-form label {
+        display: block;
+        margin-bottom: .3em;
+    }
+    .king-group input:not([type]), .king-group input[type=password], .king-group input[type=email], .king-group input[type=url], .king-group input[type=date], .king-group input[type=month], .king-group input[type=time], .king-group input[type=datetime], .king-group input[type=datetime-local], .king-group input[type=week], .king-group input[type=tel], .king-group input[type=color], .king-group input[type=number], .king-group input[type=search], .king-group input[type=text] {
+        margin-bottom: 0;
+    }
+    .king-form-aligned .king-control-group label {
+        display: block;
+        width: 100%;
+        margin-bottom: .3em;
+        text-align: left;
+    }
+    .king-form-aligned .king-controls {
+        margin: 1.5em 0 0;
+    }
+    .king-form .king-help-inline, .king-form-message, .king-form-message-inline {
+        font-size: .75em;
+        display: block;
+        padding: .2em 0 .8em;
+    }
+}
+
+
+/*固定菜单*/
+
+.king-menu-fixed {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+}
+
+
+/*菜单列表*/
+
+.king-menu-item, .king-menu-list {
+    position: relative;
+}
+
+
+/*菜单包含框*/
+
+.king-menu-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/*菜单子列表*/
+
+.king-menu-item {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*菜单头和链接选项*/
+
+.king-menu-heading, .king-menu-link {
+    display: block;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+
+/*水平菜单*/
+
+.king-menu-horizontal {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/*水平菜单和水平列表*/
+
+.king-menu-horizontal .king-menu-list {
+    display: inline-block;
+}
+
+
+/*水平菜单显示方式*/
+
+.king-menu-horizontal .king-menu-heading, .king-menu-horizontal .king-menu-item, .king-menu-horizontal .king-menu-separator {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/*二级菜单*/
+
+.king-menu-item .king-menu-item {
+    display: block;
+}
+
+
+/*子菜单*/
+
+.king-menu-children {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 100%;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*水平菜单的子菜单*/
+
+.king-menu-horizontal .king-menu-children {
+    top: auto;
+    left: 0;
+    width: inherit;
+}
+
+
+/*鼠标悬浮子菜单显示*/
+
+.king-menu-active>.king-menu-children, .king-menu-allow-hover:hover>.king-menu-children {
+    position: absolute;
+    display: block;
+}
+
+
+/*通过HTML实体添加向右箭头*/
+
+.king-menu-has-children>.king-menu-link:after {
+    font-size: small;
+    padding-left: .5em;
+    content: '\25B8';
+}
+
+
+/*水平菜单添加向下箭头*/
+
+.king-menu-horizontal .king-menu-has-children>.king-menu-link:after {
+    content: '\25BE';
+}
+
+
+/*定义垂直菜单溢出处理*/
+
+.king-menu-scrollable {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.king-menu-scrollable .king-menu-list {
+    display: block;
+}
+
+.king-menu-horizontal.king-menu-scrollable .king-menu-list {
+    display: inline-block;
+}
+
+
+/*定义水平方向溢出处理*/
+
+.king-menu-horizontal.king-menu-scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: .5em 0;
+    white-space: nowrap;
+}
+
+.king-menu-horizontal .king-menu-children .king-menu-separator, .king-menu-separator {
+    height: 1px;
+    margin: .3em 0;
+    background-color: #ccc;
+}
+
+.king-menu-horizontal .king-menu-separator {
+    width: 1px;
+    height: 1.3em;
+    margin: 0 .3em;
+}
+
+.king-menu-horizontal .king-menu-children .king-menu-separator {
+    display: block;
+    width: auto;
+}
+
+.king-menu-heading {
+    text-transform: uppercase;
+    color: #565d64;
+}
+
+.king-menu-link {
+    color: #777;
+}
+
+.king-menu-children {
+    background-color: #fff;
+}
+
+.king-menu-disabled, .king-menu-heading, .king-menu-link {
+    padding: .5em 1em;
+}
+
+.king-menu-disabled {
+    opacity: .5;
+}
+
+.king-menu-disabled .king-menu-link:hover {
+    background-color: transparent;
+}
+
+
+/*设置菜单项悬浮和获得焦点时的样式*/
+
+.king-menu-active>.king-menu-link, .king-menu-link:focus, .king-menu-link:hover {
+    background-color: #eee;
+}
+
+.king-menu-selected .king-menu-link, .king-menu-selected .king-menu-link:visited {
+    color: #000;
+}
+
+
+/*设置表格样式*/
+
+.king-table {
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+.king-table caption {
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+    color: #000;
+}
+
+.king-table td, .king-table th {
+    font-size: inherit;
+    overflow: visible;
+    margin: 0;
+    padding: .5em 1em;
+    border-width: 0 0 0 1px;
+    border-left: 1px solid #cbcbcb;
+}
+
+.king-table td:first-child, .king-table th:first-child {
+    border-left-width: 0;
+}
+
+.king-table thead {
+    text-align: left;
+    vertical-align: bottom;
+    color: #000;
+    background-color: #e0e0e0;
+}
+
+.king-table td {
+    background-color: transparent;
+}
+
+.king-table-odd td, .king-table-striped tr:nth-child(2n-1) td {
+    background-color: #f2f2f2;
+}
+
+.king-table-bordered td {
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.king-table-bordered tbody>tr:last-child>td {
+    border-bottom-width: 0;
+}
+
+.king-table-horizontal td, .king-table-horizontal th {
+    border-width: 0 0 1px;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.king-table-horizontal tbody>tr:last-child>td {
+    border-bottom-width: 0;
+}
+
+
+/*文本对齐样式*/
+
+
+/*水平居中*/
+
+.king-tc {
+    text-align: center;
+}
+
+
+/*div水平+垂直居中-内容需要包裹在一个div中*/
+
+.king-vtc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
